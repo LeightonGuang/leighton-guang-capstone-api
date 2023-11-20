@@ -5,6 +5,7 @@ const cors = require("cors");
 const PORT = process.env.PORT || 5050;
 
 const productRoutes = require("./routes/product-routes");
+const shopRoutes = require("./routes/shop-routes");
 
 app.use(cors());
 app.use(express.json());
@@ -19,6 +20,7 @@ app.get("/", (_req, res) => {
 });
 
 app.use("/api/product", productRoutes);
+app.use("/api/shop", shopRoutes);
 
 app.listen(PORT, () => {
   console.log(`running at http://localhost:${PORT} `);
