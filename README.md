@@ -14,6 +14,9 @@
 
 ### listing
 
+| product_id | shop_id | currency | price | created_at | edited_at |
+| ---------- | ------- | -------- | ----- | ---------- | --------- |
+
 ## Endpoints
 
 ### Products
