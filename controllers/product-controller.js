@@ -9,12 +9,23 @@ const getAllProduct = async (_req, res) => {
   }
 };
 
-const getAllProductCategory = async (req, res) => {
+const getAllProductCategory = async (_req, res) => {
   try {
     const data = await knex("product").distinct("category");
     res.status(200).json(data);
   } catch (error) {
     res.status(400).send(`Error retrieving all product categories: ${error}`);
+  }
+};
+
+const getAllProductInCategory = async (req, res) => {
+  try {
+    const data = await knex("product").where({ category: req.params.id });
+    res.status(200).json(data);
+  } catch (error) {
+    res
+      .status(400)
+      .send(`Error retrieving all product in ${req.params.id}: ${error}`);
   }
 };
 
@@ -31,4 +42,5 @@ module.exports = {
   getAllProduct,
   getAllProductCategory,
   getProductDetails,
+  getAllProductInCategory,
 };
