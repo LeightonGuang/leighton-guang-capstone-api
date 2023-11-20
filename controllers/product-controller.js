@@ -9,6 +9,14 @@ const getAllProduct = async (_req, res) => {
   }
 };
 
+const getAllProductCategory = async (req, res) => {
+  try {
+    const data = await knex("product").distinct("category");
+    res.status(200).json(data);
+  } catch (error) {}
+};
+
 module.exports = {
   getAllProduct,
+  getAllProductCategory,
 };
