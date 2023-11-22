@@ -4,6 +4,8 @@
 
 ### shop
 
+[DrawSql Link]("https://drawsql.app/teams/leighton/diagrams/shopdex)
+
 | id  | name | email | password | address | created_at | edited_at |
 | --- | ---- | ----- | -------- | ------- | ---------- | --------- |
 
