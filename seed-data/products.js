@@ -1,7 +1,7 @@
 module.exports = [
   {
     id: 1,
-    name: "i5",
+    name: "Intel Core i5-13600K",
     img_url:
       "https://www.price.com.hk/space/product/563000/563906_lztgc4_4.jpg",
     brand: "Intel",
@@ -11,7 +11,7 @@ module.exports = [
   },
   {
     id: 2,
-    name: "i7",
+    name: "Intel Core i7-13700K",
     img_url:
       "https://www.price.com.hk/space/product/563000/563902_i6vyiq_4.jpg",
     brand: "Intel",
@@ -21,7 +21,7 @@ module.exports = [
   },
   {
     id: 3,
-    name: "i9",
+    name: "Intel Core i9-13900K",
     img_url:
       "https://www.price.com.hk/space/product/563000/563899_kz5f5x_4.jpg",
     brand: "Intel",
@@ -31,7 +31,7 @@ module.exports = [
   },
   {
     id: 4,
-    name: "i5",
+    name: "Intel Core i5-14600K",
     img_url:
       "https://www.price.com.hk/space/product/603000/603195_4zyg2i_4.jpg",
     brand: "Intel",
@@ -41,7 +41,7 @@ module.exports = [
   },
   {
     id: 5,
-    name: "i7",
+    name: "Intel Core i7-13700K",
     img_url:
       "https://www.price.com.hk/space/product/603000/603197_buvjzj_4.png",
     brand: "Intel",
@@ -51,7 +51,7 @@ module.exports = [
   },
   {
     id: 6,
-    name: "i9",
+    name: "Intel Core i9-13900K",
     img_url:
       "https://www.price.com.hk/space/product/603000/603200_qeuyf7_4.jpg",
     brand: "Intel",
