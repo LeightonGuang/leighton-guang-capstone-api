@@ -4,7 +4,7 @@ module.exports = [
     shop_name: "Cheap Electronic Shop",
     email: "cheapElectronicShop@gmail.com",
     password: "cheap",
-    img_url:
+    shop_logo_url:
       "https://img.freepik.com/premium-vector/discount-market-logo_48832-1671.jpg",
     country: "United Kingdom",
     address: "HA14SU",
@@ -22,7 +22,7 @@ module.exports = [
     shop_name: "Premium Electronic Shop",
     email: "premiumElectronicShop@gmail.com",
     password: "premium",
-    img_url:
+    shop_logo_url:
       "https://scontent-lhr6-1.xx.fbcdn.net/v/t39.30808-6/300178982_385816237067677_7313924552969213457_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_ohc=vNN_npEyDbkAX9qnrAU&_nc_ht=scontent-lhr6-1.xx&oh=00_AfCTmu_iJttoMbJ2HwoXclfFlGwBSpeaWjLiLUQFcuG4tw&oe=656464FA",
     country: "United Kingdom",
     address: "EC2A3QA",

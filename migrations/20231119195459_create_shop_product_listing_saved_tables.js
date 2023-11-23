@@ -9,7 +9,7 @@ exports.up = function (knex) {
       table.string("shop_name").notNullable();
       table.string("email").notNullable();
       table.string("password").notNullable();
-      table.string("img_url", 500);
+      table.string("shop_logo_url", 500);
       table.string("country").notNullable();
       table.string("address").notNullable();
       table.timestamp("created_at").defaultTo(knex.fn.now());
@@ -21,7 +21,7 @@ exports.up = function (knex) {
     .createTable("product", (table) => {
       table.increments("id").primary();
       table.string("product_name").notNullable();
-      table.string("img_url");
+      table.string("product_img_url");
       table.string("brand").notNullable();
       table.string("model");
       table.string("category").notNullable();
