@@ -47,7 +47,7 @@ exports.up = function (knex) {
         .onUpdate("CASCADE")
         .onDelete("CASCADE");
       table.string("currency").notNullable();
-      table.integer("price").notNullable();
+      table.float("price").notNullable();
       table.timestamp("created_at").defaultTo(knex.fn.now());
       table
         .timestamp("updated_at")
