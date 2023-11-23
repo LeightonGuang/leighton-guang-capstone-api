@@ -6,7 +6,7 @@ exports.up = function (knex) {
   return knex.schema
     .createTable("shop", (table) => {
       table.increments("id").primary();
-      table.string("name").notNullable();
+      table.string("shop_name").notNullable();
       table.string("email").notNullable();
       table.string("password").notNullable();
       table.string("img_url", 500);
@@ -20,7 +20,7 @@ exports.up = function (knex) {
 
     .createTable("product", (table) => {
       table.increments("id").primary();
-      table.string("name").notNullable();
+      table.string("product_name").notNullable();
       table.string("img_url");
       table.string("brand").notNullable();
       table.string("model");

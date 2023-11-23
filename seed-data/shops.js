@@ -1,7 +1,7 @@
 module.exports = [
   {
     id: 1,
-    name: "Cheap Electronic Shop",
+    shop_name: "Cheap Electronic Shop",
     email: "cheapElectronicShop@gmail.com",
     password: "cheap",
     img_url:
@@ -11,7 +11,7 @@ module.exports = [
   },
   {
     id: 2,
-    name: "Average Price Shop",
+    shop_name: "Average Price Shop",
     email: "averageElectronicShop@gmail.com",
     password: "average",
     country: "United Kingdom",
@@ -19,7 +19,7 @@ module.exports = [
   },
   {
     id: 3,
-    name: "Premium Electronic Shop",
+    shop_name: "Premium Electronic Shop",
     email: "premiumElectronicShop@gmail.com",
     password: "premium",
     img_url:
@@ -29,7 +29,7 @@ module.exports = [
   },
   {
     id: 4,
-    name: "test",
+    shop_name: "test",
     email: "test@gmail.com",
     password: "$2a$10$9BUaoWQVob6/FEvpxW8nGO93ItT13/v.ocvOwXl8cY2I3AvOXXcAu",
     country: "United Kingdom",
