@@ -56,7 +56,8 @@ exports.up = function (knex) {
 
     .createTable("saved", (table) => {
       table.increments("id").primary();
-      table.integer("user_id").notNullable();
+      table.string("user_id").notNullable();
+      table.integer("listing_id").notNullable();
       table.timestamp("created_at").defaultTo(knex.fn.now());
     });
 };

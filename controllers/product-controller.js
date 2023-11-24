@@ -42,8 +42,16 @@ const getListing = async (req, res) => {
   try {
     const listing = await knex("listing")
       .where({ product_id: req.params.id })
-      .join("shop", "listing.shop_id", "shop.id");
-    // .select("name", "img_url", "currency", "price", "updated_at");
+      .join("shop", "listing.shop_id", "shop.id")
+      .select(
+        "listing.id as listing_id",
+        "shop.id as shop_id",
+        "shop.shop_name",
+        "shop.shop_logo_url",
+        "listing.currency",
+        "listing.price",
+        "listing.updated_at as listing_updated_at"
+      );
     res.status(200).json(listing);
   } catch (error) {
     res.status(400).send(`Error retrieving product listing: ${error}`);
