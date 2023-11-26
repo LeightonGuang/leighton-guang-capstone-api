@@ -67,9 +67,12 @@ const putFavourite = async (req, res) => {
   }
 };
 
+const delFavourite = async (req, res) => {};
+
 module.exports = {
   index,
   createUserInfo,
   getFavourite,
   putFavourite,
+  delFavourite,
 };
