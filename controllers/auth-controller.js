@@ -51,4 +51,10 @@ const login = async (req, res) => {
   res.send({ token });
 };
 
-module.exports = { register, login };
+const profile = async (req, res) => {
+  const shop = await knex("shop").where({ id: req.shop_id }).first();
+  delete shop.password;
+  res.send(shop);
+};
+
+module.exports = { register, login, profile };
