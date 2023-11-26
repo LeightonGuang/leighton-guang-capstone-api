@@ -48,6 +48,7 @@ const getListing = async (req, res) => {
         "shop.id as shop_id",
         "shop.shop_name",
         "shop.shop_logo_url",
+        "shop.address",
         "listing.currency",
         "listing.price",
         "listing.updated_at as listing_updated_at"

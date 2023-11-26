@@ -3,20 +3,20 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 const register = async (req, res) => {
-  const { name, email, password, country, address } = req.body;
+  const { shop_name, email, password, country, address } = req.body;
 
-  if (!name || !email || !password || !country || !address) {
+  if (!shop_name || !email || !password || !country || !address) {
     return res.status(400).send("Please enter the required fields");
   }
 
   const hashedPassword = bcrypt.hashSync(password);
 
   const newBusiness = {
-    name,
-    email,
-    password: hashedPassword,
+    shop_name,
     country,
     address,
+    email,
+    password: hashedPassword,
   };
 
   try {
