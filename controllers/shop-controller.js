@@ -23,7 +23,21 @@ const getListingofAShop = async (req, res) => {
   }
 };
 
+const getAllListing = async (_req, res) => {
+  try {
+    const data = await knex
+      .select("*")
+      .from("shop")
+      .join("listing", "shop.id", "listing.shop_id")
+      .join("product", "listing.product_id", "product.id");
+    res.status(200).json(data);
+  } catch (error) {
+    res.status(400).send(`Error retrieving all listings: ${error}`);
+  }
+};
+
 module.exports = {
   getAllShop,
   getListingofAShop,
+  getAllListing,
 };
