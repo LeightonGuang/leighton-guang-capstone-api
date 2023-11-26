@@ -30,6 +30,7 @@ const getFavourite = async (req, res) => {
       .select(
         "listing.id as listing_id",
         "product.id as product_id",
+        "saved.id as saved_id",
         "currency",
         "price",
         "product_name",
@@ -67,7 +68,14 @@ const putFavourite = async (req, res) => {
   }
 };
 
-const delFavourite = async (req, res) => {};
+const delFavourite = async (req, res) => {
+  try {
+    await knex("saved").where({ id: req.params.id }).del();
+    res.status(200).json({ message: "Removed saved from favourite list" });
+  } catch (error) {
+    res.status(400).send(`Error deleting saved product: ${error}`);
+  }
+};
 
 module.exports = {
   index,
