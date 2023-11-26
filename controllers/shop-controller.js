@@ -43,8 +43,31 @@ const getAllListing = async (_req, res) => {
   }
 };
 
+const addListing = async (req, res) => {
+  const { product_id, shop_id, currency, price } = req.body;
+
+  if (!product_id || !shop_id || !currency || !price) {
+    return res.status(400).send("Please enter the required fields");
+  }
+
+  const newListing = {
+    product_id,
+    shop_id,
+    currency,
+    price,
+  };
+
+  try {
+    await knex("listing").insert(newListing);
+    res.status(201).send("New listing craeted successfully");
+  } catch (error) {
+    res.status(400).send(`Error creating new listing: ${error}`);
+  }
+};
+
 module.exports = {
   getAllShop,
   getListingofAShop,
   getAllListing,
+  addListing,
 };
