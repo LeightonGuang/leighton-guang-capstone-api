@@ -2,20 +2,20 @@ module.exports = [
   {
     id: 1,
     shop_name: "Cheap Electronic Shop",
-    email: "cheapElectronicShop@gmail.com",
-    password: "cheap",
+    email: "cheap@gmail.com",
+    password: "$2a$10$FWQRg7DqdiUIjEDTi2WRxegXOfr.a.h5uGYjnqjPPIn/PrY2MI.lW",
     shop_logo_url:
       "https://img.freepik.com/premium-vector/discount-market-logo_48832-1671.jpg",
     country: "United Kingdom",
-    address: "HA14SU",
+    address: "CR04XL",
   },
   {
     id: 2,
     shop_name: "Average Price Shop",
     email: "averageElectronicShop@gmail.com",
-    password: "average",
+    password: "$2a$10$z2i2yoMP9t/9wM46P3oZbePqd45dpKh8y/mt0ohNfaqb8mOfvEE86",
     country: "United Kingdom",
-    address: "LA231NW",
+    address: "HA40EL",
   },
   {
     id: 3,
