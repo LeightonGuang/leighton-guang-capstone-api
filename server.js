@@ -6,6 +6,7 @@ const PORT = process.env.PORT || 5050;
 
 const productRoutes = require("./routes/product-routes");
 const shopRoutes = require("./routes/shop-routes");
+const favouriteRoute = require("./routes/favourite-routes");
 const authRoutes = require("./routes/auth-routes");
 
 app.use(cors());
@@ -22,6 +23,7 @@ app.get("/", (_req, res) => {
 
 app.use("/api/product", productRoutes);
 app.use("/api/shop", shopRoutes);
+app.use("/api/favourite", favouriteRoute);
 app.use("/auth", authRoutes);
 
 app.listen(PORT, () => {

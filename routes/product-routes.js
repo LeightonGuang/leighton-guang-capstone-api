@@ -5,5 +5,6 @@ router.route("/").get(productController.getAllProduct);
 router.route("/category").get(productController.getAllProductCategory);
 router.route("/category/:id").get(productController.getAllProductInCategory);
 router.route("/:id").get(productController.getProductDetails);
+router.route("/:id/listing").get(productController.getListing);
 
 module.exports = router;

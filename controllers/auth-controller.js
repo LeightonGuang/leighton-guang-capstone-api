@@ -3,20 +3,20 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 const register = async (req, res) => {
-  const { name, email, password, country, address } = req.body;
+  const { shop_name, email, password, country, address } = req.body;
 
-  if (!name || !email || !password || !country || !address) {
+  if (!shop_name || !email || !password || !country || !address) {
     return res.status(400).send("Please enter the required fields");
   }
 
   const hashedPassword = bcrypt.hashSync(password);
 
   const newBusiness = {
-    name,
-    email,
-    password: hashedPassword,
+    shop_name,
     country,
     address,
+    email,
+    password: hashedPassword,
   };
 
   try {
@@ -29,21 +29,21 @@ const register = async (req, res) => {
 };
 
 const login = async (req, res) => {
-  const { email, password } = req.body;
+  let { email, password } = req.body;
 
-  if (!email || !password)
+  if (!email || !password) {
     return res.status(404).send("Please enter the required fields");
+  }
 
-  const business = await knex("shop").where({ email: email }).first();
+  const shop = await knex("shop").where({ email: email }).first();
+  if (!shop) return res.status(400).send("Invalid email");
 
-  if (!business) return res.status(400).send("Invalid email");
-
-  const isPasswordCorrect = bcrypt.compareSync(password, business.password);
+  const isPasswordCorrect = bcrypt.compareSync(password, shop.password);
 
   if (!isPasswordCorrect) return res.status(400).send("Invalid password");
 
   const token = jwt.sign(
-    { id: business.id, email: business.email },
+    { id: shop.id, email: shop.email },
     process.env.JWT_KEY,
     { expiresIn: "24h" }
   );
