@@ -119,4 +119,14 @@ module.exports = [
     category: "CPU",
     description: "AM5 socket cpu",
   },
+  {
+    id: 13,
+    product_name: "CORSAIR Vengeance DDR5 5600 MHz AMD EXPO PC RAM - 16 GB x 2",
+    product_img_url:
+      "https://media.currys.biz/i/currysprod/10248093?$g-small$&fmt=auto",
+    brand: "CORSAIR",
+    model: "CMK32GX5M2B5600Z36",
+    category: "RAM",
+    description: "CL 36, DIMM, 5600 MHz frequency",
+  },
 ];
