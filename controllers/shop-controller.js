@@ -65,9 +65,16 @@ const addListing = async (req, res) => {
   }
 };
 
+const profile = async (req, res) => {
+  const shop = await knex("shop").where({ id: req.shop_id }).first();
+  delete shop.password;
+  res.send(shop);
+};
+
 module.exports = {
   getAllShop,
   getListingofAShop,
   getAllListing,
   addListing,
+  profile,
 };
