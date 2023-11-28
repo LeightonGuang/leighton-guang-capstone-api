@@ -129,4 +129,34 @@ module.exports = [
     category: "RAM",
     description: "CL 36, DIMM, 5600 MHz frequency",
   },
+  {
+    id: 14,
+    product_name: "Apple iPhone 13 128GB",
+    product_img_url:
+      "https://media.4rgos.it/s/Argos/9520062_R_SET?w=540&h=540&qlt=75&fmt=webp",
+    brand: "Apple",
+    model: "iPhone 13",
+    category: "Smartphone",
+    description: "iPhone 13 128GB",
+  },
+  {
+    id: 15,
+    product_name: "Apple iPhone 14 128GB",
+    product_img_url:
+      "https://media.4rgos.it/s/Argos/1187283_R_SET?w=540&h=540&qlt=75&fmt=webp",
+    brand: "Apple",
+    model: "iPhone 14",
+    category: "Smartphone",
+    description: "iPhone 14 128GB",
+  },
+  {
+    id: 16,
+    product_name: "Apple iPhone 15 128GB",
+    product_img_url:
+      "https://media.4rgos.it/s/Argos/3298242_R_SET?w=540&h=540&qlt=75&fmt=webp",
+    brand: "Apple",
+    model: "iPhone 15",
+    category: "Smartphone",
+    description: "iPhone 15 128GB",
+  },
 ];
