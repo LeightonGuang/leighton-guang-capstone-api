@@ -59,10 +59,21 @@ const getListing = async (req, res) => {
   }
 };
 
+const createNewProduct = async (req, res) => {
+  try {
+    const newProduct = await knex("product").insert(req.body);
+    // sends the id of the new product
+    res.status(200).json(newProduct);
+  } catch (error) {
+    res.status(400).send(`Error creating new product: ${error}`);
+  }
+};
+
 module.exports = {
   getAllProduct,
   getAllProductCategory,
   getProductDetails,
   getAllProductInCategory,
   getListing,
+  createNewProduct,
 };

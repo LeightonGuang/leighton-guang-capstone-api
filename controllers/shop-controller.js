@@ -71,10 +71,41 @@ const profile = async (req, res) => {
   res.send(shop);
 };
 
+const manageListing = async (req, res) => {
+  try {
+    const listing = await knex("listing")
+      .join("shop", "listing.shop_id", "shop.id")
+      .join("product", "listing.product_id", "product.id")
+      .select(
+        "shop.id as shop_id",
+        "product.id as product_id",
+        "listing.id as listing_id",
+        "listing.*",
+        "product.*",
+        "shop.*"
+      )
+      .where({ shop_id: req.params.id });
+    delete listing.password;
+    res.status(200).json(listing);
+  } catch (error) {
+    res.status(400).send(`Error retrieving listings for a shop: ${error}`);
+  }
+};
+
+const shopDeleteListing = async (req, res) => {
+  try {
+    await knex("listing").where({ id: req.params.listing_id }).del();
+  } catch (error) {
+    res.status(400).send(`Error deleting listing: ${error}`);
+  }
+};
+
 module.exports = {
   getAllShop,
   getListingofAShop,
   getAllListing,
+  manageListing,
   addListing,
   profile,
+  shopDeleteListing,
 };
