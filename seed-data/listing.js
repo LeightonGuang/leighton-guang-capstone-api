@@ -16,4 +16,8 @@ module.exports = [
   { id: 15, product_id: 15, shop_id: 5, currency: "GBP", price: 649 },
   { id: 16, product_id: 16, shop_id: 4, currency: "GBP", price: 999 },
   { id: 17, product_id: 16, shop_id: 5, currency: "GBP", price: 999 },
+  { id: 18, product_id: 17, shop_id: 4, currency: "GBP", price: 279 },
+  { id: 19, product_id: 17, shop_id: 5, currency: "GBP", price: 279 },
+  { id: 20, product_id: 18, shop_id: 4, currency: "GBP", price: 199 },
+  { id: 21, product_id: 18, shop_id: 5, currency: "GBP", price: 199 },
 ];

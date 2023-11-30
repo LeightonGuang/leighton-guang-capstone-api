@@ -14,6 +14,8 @@ module.exports = [
     shop_name: "Average Price Shop",
     email: "averageElectronicShop@gmail.com",
     password: "$2a$10$z2i2yoMP9t/9wM46P3oZbePqd45dpKh8y/mt0ohNfaqb8mOfvEE86",
+    shop_logo_url:
+      "https://img.freepik.com/premium-vector/digital-shopping-logo-template-design-vector-emblem-design-concept-creative-symbol-icon_316488-2430.jpg",
     country: "United Kingdom",
     address: "HA40EL",
   },

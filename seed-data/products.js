@@ -121,13 +121,13 @@ module.exports = [
   },
   {
     id: 13,
-    product_name: "CORSAIR Vengeance DDR5 5600 MHz AMD EXPO PC RAM - 16 GB x 2",
+    product_name: "CORSAIR Vengeance DDR5 5600 MHz",
     product_img_url:
       "https://media.currys.biz/i/currysprod/10248093?$g-small$&fmt=auto",
     brand: "CORSAIR",
     model: "CMK32GX5M2B5600Z36",
     category: "RAM",
-    description: "CL 36, DIMM, 5600 MHz frequency",
+    description: "CL 36, DIMM, 5600 MHz AMD EXPO PC RAM - 16 GB x 2",
   },
   {
     id: 14,
@@ -158,5 +158,26 @@ module.exports = [
     model: "iPhone 15",
     category: "Smartphone",
     description: "iPhone 15 128GB",
+  },
+  {
+    id: 17,
+    product_name:
+      "SONY WH-1000XM5 Wireless Bluetooth Noise-Cancelling Headphones",
+    product_img_url:
+      "https://media.4rgos.it/s/Argos/2847319_R_SET?w=540&h=540&qlt=75&fmt=webp",
+    brand: "Sony",
+    model: "WH-1000XM5",
+    category: "Headphones",
+    description: "Wireless Bluetooth Noise-Cancelling Headphones",
+  },
+  {
+    id: 18,
+    product_name: "Apple AirPods Pro with USB-C MagSafe Case (2nd Generation)",
+    product_img_url:
+      "https://media.4rgos.it/i/Argos/3297102_R_Z001A?w=1500&h=880&qlt=70&fmt=webp",
+    brand: "Apple",
+    model: "Airpods Pro 2nd Generation",
+    category: "Earbuds",
+    description: "Wireless Bluetooth Noise-Cancelling Earbuds",
   },
 ];
