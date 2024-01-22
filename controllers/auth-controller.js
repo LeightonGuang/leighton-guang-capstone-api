@@ -1,6 +1,8 @@
 const knex = require("knex")(require("../knexfile"));
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const passport = require("passport");
+const GoogleStrategy = require("passport-google-oauth20").Strategy;
 
 const register = async (req, res) => {
   const { shop_name, email, password, country, address } = req.body;
@@ -51,4 +53,41 @@ const login = async (req, res) => {
   res.send({ token });
 };
 
-module.exports = { register, login };
+const loginGoogle = async (_req, _res) => {
+  passport.use(
+    new GoogleStrategy(
+      {
+        clientID: process.env.GOOGLE_CLIENT_ID,
+        clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+        callbackURL: "/auth/google/callback",
+      },
+      function (accessToken, refreshToken, profile, cb) {
+        User.findOrCreate({ googleId: profile.id }, function (err, user) {
+          return cb(err, user);
+        });
+      }
+    )
+  );
+
+  passport.serializeUser(function (user, done) {
+    done(null, user);
+  });
+
+  passport.deserializeUser(function (user, done) {
+    done(null, user);
+  });
+
+  passport.authenticate("google", {
+    scope: ["email", "profile"],
+  });
+  console.log("login using google oauth");
+};
+
+const loginGoogleCallback = async (_req, _res) => {
+  passport.authenticate("google", { failureRedirect: "/" }),
+    function (_req, res) {
+      res.redirect("/");
+    };
+};
+
+module.exports = { register, loginGoogle, login, loginGoogleCallback };
