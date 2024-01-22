@@ -1,19 +1,45 @@
 require("dotenv").config();
 const express = require("express");
+const expressSession = require("express-session");
 const app = express();
 const cors = require("cors");
+const helmet = require("helmet");
 const PORT = process.env.PORT || 5050;
 
 const productRoutes = require("./routes/product-routes");
 const shopRoutes = require("./routes/shop-routes");
 const favouriteRoute = require("./routes/favourite-routes");
 const authRoutes = require("./routes/auth-routes");
+const passport = require("passport");
 
-app.use(cors());
+const corsOptions = {
+  origin: "http://localhost:3000",
+  credentials: true,
+  optionsSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
+
 app.use(express.json());
+app.use(helmet());
 
 app.use((_req, _res, next) => {
   console.log("Logging a request from middleware");
+  next();
+});
+
+app.use(
+  expressSession({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true,
+  })
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(function (_req, res, next) {
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
   next();
 });
 
